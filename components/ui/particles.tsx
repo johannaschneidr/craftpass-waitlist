@@ -119,7 +119,7 @@ const Particles: React.FC<ParticlesProps> = ({
     initCanvas();
   }, [refresh, initCanvas]);
 
-  const onMouseMove = () => {
+  const onMouseMove = useCallback(() => {
     if (canvasRef.current) {
       const rect = canvasRef.current.getBoundingClientRect();
       const { w, h } = canvasSize.current;
@@ -131,7 +131,7 @@ const Particles: React.FC<ParticlesProps> = ({
         mouse.current.y = y;
       }
     }
-  };
+  }, [mousePosition.x, mousePosition.y]);
 
   type Circle = {
     x: number;
@@ -186,7 +186,7 @@ const Particles: React.FC<ParticlesProps> = ({
 
   const rgb = hexToRgb(color);
 
-  const drawCircle = (circle: Circle, update = false) => {
+  const drawCircle = useCallback((circle: Circle, update = false) => {
     if (context.current) {
       const { x, y, translateX, translateY, size, alpha } = circle;
       context.current.translate(translateX, translateY);
@@ -200,9 +200,9 @@ const Particles: React.FC<ParticlesProps> = ({
         circles.current.push(circle);
       }
     }
-  };
+  }, [rgb, dpr]);
 
-  const clearContext = () => {
+  const clearContext = useCallback(() => {
     if (context.current) {
       context.current.clearRect(
         0,
@@ -211,16 +211,16 @@ const Particles: React.FC<ParticlesProps> = ({
         canvasSize.current.h,
       );
     }
-  };
+  }, []);
 
-  const drawParticles = () => {
+  const drawParticles = useCallback(() => {
     clearContext();
     circles.current = [];
     for (let i = 0; i < quantity; i++) {
       const circle = circleParams();
       drawCircle(circle);
     }
-  };
+  }, [quantity, clearContext, drawCircle]);
 
   const remapValue = (
     value: number,
@@ -234,7 +234,7 @@ const Particles: React.FC<ParticlesProps> = ({
     return remapped > 0 ? remapped : 0;
   };
 
-  const animate = () => {
+  const animate = useCallback(() => {
     clearContext();
     circles.current.forEach((circle: Circle, i: number) => {
       const edge = [
@@ -278,7 +278,11 @@ const Particles: React.FC<ParticlesProps> = ({
       }
     });
     window.requestAnimationFrame(animate);
-  };
+  }, [clearContext, staticity, ease, vx, vy]);
+
+  useEffect(() => {
+    animate();
+  }, [animate]);
 
   return (
     <div

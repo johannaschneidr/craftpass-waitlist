@@ -4,9 +4,7 @@ import { toast } from "sonner";
 import { useState } from "react";
 import CTA from "@/components/cta";
 import Form from "@/components/form";
-import Logos from "@/components/logos";
 import Particles from "@/components/ui/particles";
-import Header from "@/components/header";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -29,12 +27,12 @@ export default function Home() {
 
   const handleSubmit = async () => {
     if (!name || !email) {
-      toast.error("Please fill in all fields 😠");
+      toast.error("Please fill in all fields");
       return;
     }
 
     if (!isValidEmail(email)) {
-      toast.error("Please enter a valid email address 😠");
+      toast.error("Please enter a valid email address");
       return;
     }
 
@@ -109,23 +107,21 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center overflow-x-clip pt-12 md:pt-24">
-      <section className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
-        <Header />
+    <main className="flex min-h-screen flex-col items-center overflow-x-clip">
+      <div className="flex-1 flex flex-col items-center justify-center">
+        <section className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
+          <CTA />
 
-        <CTA />
-
-        <Form
-          name={name}
-          email={email}
-          handleNameChange={handleNameChange}
-          handleEmailChange={handleEmailChange}
-          handleSubmit={handleSubmit}
-          loading={loading}
-        />
-
-        <Logos />
-      </section>
+          <Form
+            name={name}
+            email={email}
+            handleNameChange={handleNameChange}
+            handleEmailChange={handleEmailChange}
+            handleSubmit={handleSubmit}
+            loading={loading}
+          />
+        </section>
+      </div>
 
       <Footer />
 
