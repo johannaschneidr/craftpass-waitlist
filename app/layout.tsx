@@ -18,15 +18,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
-      <meta
-        property="og:site_name"
-        content="CraftPass"
-      />
-      <meta
-        property="og:url"
-        content="https://craftpass.co"
-      />
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
+        <meta
+          property="og:site_name"
+          content="CraftPass"
+        />
+        <meta
+          property="og:url"
+          content="https://craftpass.co"
+        />
+      </head>
       <body className={FigtreeFont.className}>
         {children}
         <Toaster richColors position="top-center" />

@@ -33,7 +33,17 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: true }, { status: 200 });
-  } catch (error) {
-    return NextResponse.json({ success: false }, { status: 500 });
+  } catch (error: unknown) {
+    console.error("Notion API Error:", error);
+    const errorMessage = error instanceof Error ? error.message : "Unknown error occurred";
+    return new NextResponse(
+      JSON.stringify({ error: "Error creating record", details: errorMessage }), 
+      { 
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }
+    );
   }
 }

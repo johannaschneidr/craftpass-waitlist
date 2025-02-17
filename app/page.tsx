@@ -108,10 +108,19 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center overflow-x-clip">
+      <div 
+        className="fixed inset-0 -z-[200] opacity-40"
+        style={{
+          backgroundImage: 'url("/almondblossom.png")',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      
       <div className="flex-1 flex flex-col items-center justify-center">
         <section className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
           <CTA />
-
           <Form
             name={name}
             email={email}
@@ -129,7 +138,8 @@ export default function Home() {
         quantityDesktop={350}
         quantityMobile={100}
         ease={80}
-        color={"#F7FF9B"}
+        size={1.4}
+        color={"#EDE6E7"}
         refresh
       />
     </main>
