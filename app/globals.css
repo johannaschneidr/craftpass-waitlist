@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    --background: 180 8% 80%;  
-    --foreground: 0 0% 0%;      /* Keep black text */
+    --background: 180 4% 90%;  /* light green */
+    --foreground: 222 95% 13%;  /* #011640 */
 
-    --card: 180 8% 80%;
-    --card-foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 95% 13%;  /* #011640 */
 
-    --popover: 180 8% 80%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 95% 13%;  /* #011640 */
 
     --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
@@ -30,7 +30,7 @@
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+    --ring: 270 50% 25%;      /* dark purple for input focus */
 
     --radius: 0.5rem;
   }

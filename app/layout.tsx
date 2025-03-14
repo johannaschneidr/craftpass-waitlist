@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "CraftPass",
   description:
     "CraftPass. The platform powering your creative wellness.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

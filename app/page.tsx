@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import { useState } from "react";
 import CTA from "@/components/cta";
 import Form from "@/components/form";
-import Particles from "@/components/ui/particles";
+//import Particles from "@/components/ui/particles";
 import Footer from "@/components/footer";
 
 export default function Home() {
@@ -111,7 +111,7 @@ export default function Home() {
       <div 
         className="fixed inset-0 -z-[200] opacity-40"
         style={{
-          backgroundImage: 'url("/almondblossom.png")',
+          backgroundImage: 'url("/background.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -133,15 +133,6 @@ export default function Home() {
       </div>
 
       <Footer />
-
-      <Particles
-        quantityDesktop={350}
-        quantityMobile={100}
-        ease={80}
-        size={1.4}
-        color={"#EDE6E7"}
-        refresh
-      />
     </main>
   );
 }

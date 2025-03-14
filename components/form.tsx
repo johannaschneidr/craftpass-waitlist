@@ -52,7 +52,7 @@ export default function Form({
           Icon={FaArrowRightLong}
           onClick={handleSubmit}
           iconPlacement="right"
-          className="mt-6 w-full bg-[#EDE6E7] text-neutral-950 hover:bg-[#EDE6E7]/90"
+          className="mt-6 w-full bg-[#011640] text-white hover:bg-[#011640]/85"
           disabled={loading}>
           {loading ? "Loading..." : "Join Waitlist!"}
         </EnhancedButton>
