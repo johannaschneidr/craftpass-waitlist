@@ -24,10 +24,9 @@ const PricingTiers = () => {
   ];
 
   return (
-    <div className="w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 mb-40">
-      <h2 className="text-center text-2xl font-semibold mb-1">Available plans</h2>
-      <p className="text-center text-xl font-regular mb-12">Classes can be booked through a standardized credit system. Each class is worth 1-6 credits.</p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-[1200px] mx-auto">
+    <div className="w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 mb-6 md:mb-20">
+      {/*<h2 className="text-center text-2xl font-semibold mb-12">Available Plans</h2>*/}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-[1200px] mx-auto">
         {tiers.map((tier) => (
           <div
             key={tier.name}

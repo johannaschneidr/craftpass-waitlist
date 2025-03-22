@@ -130,10 +130,7 @@ export default function Home() {
         </section>
         
         {/* Waitlist Section */}
-        <section className="w-full max-w-[1400px] flex flex-col items-center px-4 sm:px-6 lg:px-8 mt-32 md:mt-40">
-          <h2 className="text-xl md:text-xl font-regular tracking-tight mb-2 text-center max-w-md">
-            Sign up for our waitlist
-          </h2>
+        <section className="w-full max-w-[1400px] flex flex-col items-center px-4 sm:px-6 lg:px-8 mt-8 md:mt-10">
           <Form
             name={name}
             email={email}

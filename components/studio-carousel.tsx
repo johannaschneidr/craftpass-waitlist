@@ -72,10 +72,10 @@ const StudioCarousel = () => {
 
   return (
     <div className="w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 mb-40">
-      <h2 className="text-center text-2xl font-semibold mb-12">Our Partner Studios</h2>
+      <h2 className="text-center text-xl font-regular mb-8 md:mb-10">Studios our users love</h2>
       
       {/* Mobile View - Stacked */}
-      <div className="md:hidden grid grid-cols-1 gap-8">
+      <div className="md:hidden grid grid-cols-1 gap-6">
         {studios.map((studio) => (
           <div
             key={studio.id}

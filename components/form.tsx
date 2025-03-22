@@ -25,38 +25,39 @@ export default function Form({
   loading,
 }: FormProps) {
   return (
-    <motion.div
-      className="mt-6 flex w-full max-w-[24rem] flex-col gap-2"
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible">
-      <motion.div variants={itemVariants}>
+    <div className="w-full max-w-md space-y-4">
+      <div className="relative">
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-md" />
         <Input
           type="text"
-          placeholder="Your Name"
+          placeholder="Your name"
           value={name}
           onChange={handleNameChange}
+          className="border-transparent"
         />
-      </motion.div>
-      <motion.div variants={itemVariants}>
+      </div>
+      
+      <div className="relative">
+        <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-md" />
         <Input
           type="email"
-          placeholder="Your Email Address"
+          placeholder="Your email address"
           value={email}
           onChange={handleEmailChange}
+          className="border-transparent"
         />
-      </motion.div>
-      <motion.div variants={itemVariants}>
-        <EnhancedButton
-          variant="expandIcon"
-          Icon={FaArrowRightLong}
-          onClick={handleSubmit}
-          iconPlacement="right"
-          className="mt-6 w-full bg-[#011640] text-white hover:bg-[#011640]/85"
-          disabled={loading}>
-          {loading ? "Loading..." : "Join Waitlist!"}
-        </EnhancedButton>
-      </motion.div>
-    </motion.div>
+      </div>
+
+      <EnhancedButton
+        variant="expandIcon"
+        Icon={FaArrowRightLong}
+        onClick={handleSubmit}
+        iconPlacement="right"
+        className="mt-6 w-full bg-[#011640] text-white hover:bg-[#011640]"
+        disabled={loading}
+      >
+        {loading ? "Loading..." : "Join the waitlist"}
+      </EnhancedButton>
+    </div>
   );
 }
