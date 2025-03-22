@@ -6,6 +6,9 @@ import CTA from "@/components/cta";
 import Form from "@/components/form";
 //import Particles from "@/components/ui/particles";
 import Footer from "@/components/footer";
+import PricingTiers from "@/components/pricing-tiers";
+import StudioCarousel from "@/components/studio-carousel";
+import NavBar from "@/components/nav-bar";
 
 export default function Home() {
   const [name, setName] = useState<string>("");
@@ -107,7 +110,7 @@ export default function Home() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center overflow-x-clip">
+    <main className="relative flex min-h-screen flex-col items-center">
       <div 
         className="fixed inset-0 -z-[200] opacity-40"
         style={{
@@ -118,9 +121,19 @@ export default function Home() {
         }}
       />
       
-      <div className="flex-1 flex flex-col items-center justify-center">
-        <section className="flex flex-col items-center px-4 sm:px-6 lg:px-8">
+      <NavBar />
+      
+      <div className="flex-1 flex flex-col items-center w-full">
+        {/* CTA Section */}
+        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-8 mt-32 md:mt-40">
           <CTA />
+        </section>
+        
+        {/* Waitlist Section */}
+        <section className="w-full max-w-[1400px] flex flex-col items-center px-4 sm:px-6 lg:px-8 mt-32 md:mt-40">
+          <h2 className="text-xl md:text-xl font-regular tracking-tight mb-2 text-center max-w-md">
+            Sign up for our waitlist
+          </h2>
           <Form
             name={name}
             email={email}
@@ -129,6 +142,16 @@ export default function Home() {
             handleSubmit={handleSubmit}
             loading={loading}
           />
+        </section>
+
+        {/* Pricing Section */}
+        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-8 mt-40 md:mt-60">
+          <PricingTiers />
+        </section>
+
+        {/* Studio Carousel Section */}
+        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-8 mt-40">
+          <StudioCarousel />
         </section>
       </div>
 
