@@ -14,6 +14,7 @@ export default function Home() {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const [success, setSuccess] = useState<boolean>(false);
 
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setEmail(event.target.value);
@@ -78,9 +79,11 @@ export default function Home() {
             reject("Notion insertion failed");
           }
         } else {
+          setSuccess(true);
           resolve({ name });
         }
       } catch (error) {
+        setSuccess(false);
         reject(error);
       }
     });
@@ -138,6 +141,7 @@ export default function Home() {
             handleEmailChange={handleEmailChange}
             handleSubmit={handleSubmit}
             loading={loading}
+            success={success}
           />
         </section>
 
