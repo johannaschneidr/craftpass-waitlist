@@ -42,74 +42,52 @@ export default function Home() {
 
     setLoading(true);
 
-    const promise = new Promise(async (resolve, reject) => {
-      try {
-        // First, attempt to send the email
-        const mailResponse = await fetch("/api/mail", {
-          cache: "no-store",
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ firstname: name, email }),
-        });
+    try {
+      // First, attempt to send the email
+      const mailResponse = await fetch("/api/mail", {
+        cache: "no-store",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ firstname: name, email }),
+      });
 
-        if (!mailResponse.ok) {
-          if (mailResponse.status === 429) {
-            reject("Rate limited");
-          } else {
-            reject("Email sending failed");
-          }
-          return; // Exit the promise early if mail sending fails
-        }
-
-        // If email sending is successful, proceed to insert into Notion
-        const notionResponse = await fetch("/api/notion", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ name, email }),
-        });
-
-        if (!notionResponse.ok) {
-          if (notionResponse.status === 429) {
-            reject("Rate limited");
-          } else {
-            reject("Notion insertion failed");
-          }
+      if (!mailResponse.ok) {
+        if (mailResponse.status === 429) {
+          toast.error("You're doing that too much. Please try again later");
         } else {
-          setSuccess(true);
-          resolve({ name });
+          toast.error("Failed to send email. Please try again 😢");
         }
-      } catch (error) {
-        setSuccess(false);
-        reject(error);
+        return;
       }
-    });
 
-    toast.promise(promise, {
-      loading: "Getting you on the waitlist... 🚀",
-      success: (data) => {
+      // If email sending is successful, proceed to insert into Notion
+      const notionResponse = await fetch("/api/notion", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email }),
+      });
+
+      if (!notionResponse.ok) {
+        if (notionResponse.status === 429) {
+          toast.error("You're doing that too much. Please try again later");
+        } else {
+          toast.error("Failed to save your details. Please try again 😢");
+        }
+      } else {
+        setSuccess(true);
         setName("");
         setEmail("");
-        return "Thank you for joining the waitlist 🎉";
-      },
-      error: (error) => {
-        if (error === "Rate limited") {
-          return "You're doing that too much. Please try again later";
-        } else if (error === "Email sending failed") {
-          return "Failed to send email. Please try again 😢.";
-        } else if (error === "Notion insertion failed") {
-          return "Failed to save your details. Please try again 😢.";
-        }
-        return "An error occurred. Please try again 😢.";
-      },
-    });
-
-    promise.finally(() => {
+      }
+    } catch (error) {
+      toast.error("An error occurred. Please try again 😢");
+      setSuccess(false);
+    } finally {
       setLoading(false);
-    });
+    }
   };
 
   return (
