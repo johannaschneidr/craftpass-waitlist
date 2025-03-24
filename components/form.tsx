@@ -63,7 +63,7 @@ export default function Form({
 
       {success && (
         <p className="text-sm text-center text-[#011640] mt-2">
-          Thank you for joining the waitlist! We'll be in touch soon.
+          Thank you for joining the waitlist! We&apos;ll be in touch soon.
         </p>
       )}
     </div>
