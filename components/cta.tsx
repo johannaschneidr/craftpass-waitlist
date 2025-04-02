@@ -23,10 +23,10 @@ const CTA = () => {
         </motion.div>
         
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
-          Powering your creative wellness
+          Your all-in-one pass for creativity
         </h1>
         <p className="text-xl md:text-xl font-regular tracking-tight mb-2 text-center max-w-[1400px]">
-          Get monthly credits through CraftPass to access the best art and craft workshops and unlock your full creative potential
+          Discover and book the best creative workshops in your area, enjoy exclusive savings, and connect with a community of like-minded makers—all in one place.
         </p>
       </motion.div>
     </div>
