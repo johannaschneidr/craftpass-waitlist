@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CraftPass",
     description: "CraftPass. The platform powering your creative wellness.",
-    images: ["/og-image.png"],
+    images: ["/og-image.png?v=2"],
   }
 };
 
