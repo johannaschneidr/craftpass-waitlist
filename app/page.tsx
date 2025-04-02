@@ -54,6 +54,7 @@ export default function Home() {
       });
 
       if (!mailResponse.ok) {
+        console.error('Mail error:', await mailResponse.json());
         if (mailResponse.status === 429) {
           toast.error("You're doing that too much. Please try again later");
         } else {
@@ -83,6 +84,7 @@ export default function Home() {
         setEmail("");
       }
     } catch (error) {
+      console.error('Submit error:', error);
       toast.error("An error occurred. Please try again 😢");
       setSuccess(false);
     } finally {
