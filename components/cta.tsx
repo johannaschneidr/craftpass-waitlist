@@ -16,7 +16,7 @@ const CTA = () => {
           <div className="flex items-center justify-center mb-4">
             <div className="flex w-fit items-center justify-center rounded-full bg-muted/30 text-center">
               <AnimatedShinyText className="px-4 py-0.5">
-                <span>Coming soon</span>
+                <span>Coming soon to NYC</span>
               </AnimatedShinyText>
             </div>
           </div>

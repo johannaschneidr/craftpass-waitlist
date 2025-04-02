@@ -106,12 +106,12 @@ export default function Home() {
       
       <div className="flex-1 flex flex-col items-center w-full">
         {/* CTA Section */}
-        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-8 mt-32 md:mt-40">
+        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-8 mt-10 md:mt-0">
           <CTA />
         </section>
         
         {/* Waitlist Section */}
-        <section className="w-full max-w-[1400px] flex flex-col items-center px-4 sm:px-6 lg:px-8 mt-8 md:mt-10">
+        <section className="w-full max-w-[1400px] flex flex-col items-center px-4 sm:px-6 lg:px-8 mt-10 md:mt-10 mb-40">
           <Form
             name={name}
             email={email}
@@ -123,15 +123,15 @@ export default function Home() {
           />
         </section>
 
-        {/* Pricing Section */}
+        {/* Pricing Section
         <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-8 mt-40 md:mt-60">
           <PricingTiers />
-        </section>
+        </section> */}
 
-        {/* Studio Carousel Section */}
+        {/* Studio Carousel Section
         <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-8 mt-40">
           <StudioCarousel />
-        </section>
+        </section> */}
       </div>
 
       <Footer />

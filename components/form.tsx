@@ -32,7 +32,7 @@ export default function Form({
         <div className="absolute inset-0 bg-white/30 backdrop-blur-sm rounded-md" />
         <Input
           type="text"
-          placeholder="Your Name"
+          placeholder="Your name"
           value={name}
           onChange={handleNameChange}
           className="border-transparent"
@@ -43,7 +43,7 @@ export default function Form({
         <div className="absolute inset-0 bg-white/30 backdrop-blur-sm rounded-md" />
         <Input
           type="email"
-          placeholder="Your Email Address"
+          placeholder="Your email address"
           value={email}
           onChange={handleEmailChange}
           className="border-transparent"
