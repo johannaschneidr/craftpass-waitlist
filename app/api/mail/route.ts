@@ -39,7 +39,7 @@ export async function POST(request: NextRequest, response: NextResponse) {
   const { email, firstname } = await request.json();
 
   const { data, error } = await resend.emails.send({
-    from: "hello@craftpass.co>",
+    from: "hello@craftpass.co",
     to: [email],
     subject: "You are on the list! Stay tuned for updates on CraftPass.",
     reply_to: "hello@craftpass.co",

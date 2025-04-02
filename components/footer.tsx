@@ -2,16 +2,16 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "@/lib/animation-variants";
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      animate="visible"
-      className="mt-auto flex w-full items-center justify-center gap-1 border-t bg-background p-6 text-muted-foreground md:justify-start">
-      <motion.div variants={itemVariants}>
-        @ 2025 CraftPass
-      </motion.div>
-    </motion.div>
+    <footer className="w-full py-6 mt-auto">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-center text-sm">
+          © {new Date().getFullYear()} CraftPass. All rights reserved.
+        </p>
+      </div>
+    </footer>
   );
-}
+};
+
+export default Footer;
