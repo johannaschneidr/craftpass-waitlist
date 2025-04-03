@@ -23,10 +23,10 @@ const CTA = () => {
         </motion.div>
         
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
-          Your all-in-one pass for creativity
+          Creative workshops that inspire, connect, and recharge
         </h1>
         <p className="text-xl md:text-xl font-regular tracking-tight mb-2 text-center max-w-[1400px]">
-          Discover and book the best creative workshops in your area, enjoy exclusive savings, and connect with a community of like-minded makers—all in one place.
+          Discover the best creative workshops in your area, save on every booking, and connect with a community of like-minded makers. All in one place.
         </p>
       </motion.div>
     </div>
