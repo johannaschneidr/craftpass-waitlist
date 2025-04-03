@@ -95,18 +95,13 @@ export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center">
       <div 
-        className="fixed inset-0 -z-[200] opacity-40"
+        className="fixed inset-0 -z-[200] opacity-40 min-h-[100dvh]"
         style={{
           backgroundImage: 'url("/background.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'scroll',
-          height: '100%',
-          width: '100%',
-          position: 'fixed',
-          top: 0,
-          left: 0,
+          backgroundAttachment: 'fixed',
         }}
       />
       
