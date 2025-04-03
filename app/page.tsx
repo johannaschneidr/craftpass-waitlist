@@ -118,7 +118,7 @@ export default function Home() {
       
       <div className="flex-1 flex flex-col items-center w-full pt-0">
         {/* CTA Section */}
-        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-2 mt-20 md:mt-20">
+        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-2 mt-20 md:mt-40">
           <CTA />
         </section>
         

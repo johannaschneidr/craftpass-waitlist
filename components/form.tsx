@@ -27,7 +27,7 @@ export default function Form({
   success,
 }: FormProps) {
   return (
-    <div className="w-full max-w-sm space-y-3">
+    <div className="w-[280px] sm:w-full max-w-sm space-y-3">
       <div className="relative">
         <div className="absolute inset-0 bg-white/30 backdrop-blur-sm rounded-md" />
         <Input
@@ -63,7 +63,7 @@ export default function Form({
 
       {success && (
         <p className="text-sm text-center text-[#011640] mt-2">
-          You&apos;re on the list!
+          Thanks for signing up! We&apos;ll be in touch soon.
         </p>
       )}
     </div>
