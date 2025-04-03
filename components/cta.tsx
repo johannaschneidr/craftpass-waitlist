@@ -25,7 +25,7 @@ const CTA = () => {
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
           Creative experiences that inspire, connect, and recharge
         </h1>
-        <p className="text-xl md:text-xl font-regular tracking-tight mb-2 text-center max-w-2xl md:max-w-5xl mx-auto">
+        <p className="text-xl md:text-xl font-regular tracking-tight mb-2 text-center max-w-2xl md:max-w-2xl mx-auto">
           Discover the best creative workshops and meetups in your area, save on every booking, and connect with a community of like-minded makers. All in one place.
         </p>
       </motion.div>
