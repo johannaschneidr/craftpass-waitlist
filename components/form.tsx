@@ -27,12 +27,12 @@ export default function Form({
   success,
 }: FormProps) {
   return (
-    <div className="w-full max-w-md space-y-3">
+    <div className="w-full max-w-sm space-y-3">
       <div className="relative">
         <div className="absolute inset-0 bg-white/30 backdrop-blur-sm rounded-md" />
         <Input
           type="text"
-          placeholder="Your name"
+          placeholder="Your Name"
           value={name}
           onChange={handleNameChange}
           className="border-transparent"
@@ -43,7 +43,7 @@ export default function Form({
         <div className="absolute inset-0 bg-white/30 backdrop-blur-sm rounded-md" />
         <Input
           type="email"
-          placeholder="Your email address"
+          placeholder="Your Email Address"
           value={email}
           onChange={handleEmailChange}
           className="border-transparent"
@@ -55,15 +55,15 @@ export default function Form({
         Icon={FaArrowRightLong}
         onClick={handleSubmit}
         iconPlacement="right"
-        className="mt-6 w-full bg-[#011640] text-white hover:bg-[#011640]"
+        className="mt-6 w-full bg-[#011640] text-white hover:bg-[#011640]/90"
         disabled={loading}
       >
-        {loading ? "Loading..." : "Join the waitlist"}
+        {loading ? "Loading..." : "Join Waitlist!"}
       </EnhancedButton>
 
       {success && (
         <p className="text-sm text-center text-[#011640] mt-2">
-          Thank you for joining the waitlist! We&apos;ll be in touch soon.
+          You&apos;re on the list!
         </p>
       )}
     </div>

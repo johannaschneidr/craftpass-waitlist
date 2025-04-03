@@ -95,13 +95,17 @@ export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center">
       <div 
-        className="fixed inset-0 -z-[200] opacity-40 min-h-[100dvh]"
+        className="fixed inset-0 -z-[200] opacity-40 min-h-[100dvh] w-full"
         style={{
           backgroundImage: 'url("/background.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
         }}
       />
       
@@ -109,7 +113,7 @@ export default function Home() {
       
       <div className="flex-1 flex flex-col items-center w-full">
         {/* CTA Section */}
-        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-8 mt-12 md:mt-24">
+        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-2 mt-0 md:mt-0">
           <CTA />
         </section>
         
