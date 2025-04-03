@@ -93,7 +93,7 @@ export default function Home() {
   };
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center">
+    <main className="relative flex min-h-screen flex-col items-center overflow-x-clip">
       <div 
         className="fixed inset-0 -z-[200] opacity-40 min-h-[100dvh] w-full"
         style={{
@@ -106,19 +106,24 @@ export default function Home() {
           left: 0,
           right: 0,
           bottom: 0,
+          width: '100%',
+          height: '100%',
+          transform: 'translateZ(0)', // Add hardware acceleration
+          WebkitTransform: 'translateZ(0)', // For Safari
+          willChange: 'transform', // Optimize for animations
         }}
       />
       
       <NavBar />
       
-      <div className="flex-1 flex flex-col items-center w-full">
+      <div className="flex-1 flex flex-col items-center w-full pt-0">
         {/* CTA Section */}
-        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-2 mt-0 md:mt-0">
+        <section className="w-full max-w-[1400px] flex justify-center px-4 sm:px-6 lg:px-2 mt-20 md:mt-20">
           <CTA />
         </section>
         
         {/* Waitlist Section */}
-        <section className="w-full max-w-[1400px] flex flex-col items-center px-4 sm:px-6 lg:px-8 mt-10 md:mt-10 mb-40">
+        <section className="w-full max-w-[1400px] flex flex-col items-center px-4 sm:px-6 lg:px-8 mt-8 md:mt-8 mb-40">
           <Form
             name={name}
             email={email}

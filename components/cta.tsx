@@ -5,9 +5,9 @@ import { containerVariants, itemVariants } from "@/lib/animation-variants";
 
 const CTA = () => {
   return (
-    <div className="w-full max-w-[1400px] flex flex-col items-center mt-32 md:mt-40">
+    <div className="w-full max-w-[1400px] flex flex-col items-center">
       <motion.div
-        className="flex w-full max-w-2xl flex-col gap-2"
+        className="flex w-full max-w-2xl md:max-w-7xl flex-col gap-2"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -23,10 +23,10 @@ const CTA = () => {
         </motion.div>
         
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-2 text-center">
-          Creative workshops that inspire, connect, and recharge
+          Creative experiences that inspire, connect, and recharge
         </h1>
-        <p className="text-xl md:text-xl font-regular tracking-tight mb-2 text-center max-w-[1400px]">
-          Discover the best creative workshops in your area, save on every booking, and connect with a community of like-minded makers. All in one place.
+        <p className="text-xl md:text-xl font-regular tracking-tight mb-2 text-center max-w-2xl md:max-w-5xl mx-auto">
+          Discover the best creative workshops and meetups in your area, save on every booking, and connect with a community of like-minded makers. All in one place.
         </p>
       </motion.div>
     </div>
